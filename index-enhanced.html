@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Provider Abroad to Caregiver at Home: Beth's Story Beyond Gender Norms</title>
+  <meta name="description" content="A long-form editorial feature on Beth, a Filipino mother who navigated the roles of overseas worker and primary caregiver, challenging gender norms through lived experience." />
+  <meta name="author" content="James Ongo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --bg:          #faf8f5;
+      --bg-alt:      #f3f0eb;
+      --surface:     #ffffff;
+      --text:        #1c1a18;
+      --text-muted:  #5c5752;
+      --text-light:  #8a8480;
+      --accent:      #7c5c3e;
+      --accent-warm: #a07850;
+      --rule:        #dedad4;
+      --progress-h:  3px;
+      --max-prose:   760px;
+      --max-wide:    900px;
+      --font-serif:  'Lora', Georgia, serif;
+      --font-sans:   'Inter', system-ui, sans-serif;
+      --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg:          #141210;
+      --bg-alt:      #1e1b18;
+      --surface:     #1e1b18;
+      --text:        #ede9e4;
+      --text-muted:  #a09890;
+      --text-light:  #6a6460;
+      --accent:      #c8a478;
+      --accent-warm: #d4b488;
+      --rule:        #2e2a26;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 17px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.35s var(--ease-smooth), color 0.35s var(--ease-smooth);
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--accent-warm); }
+
+    /* ============================================================
+       READING PROGRESS BAR
+    ============================================================ */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: var(--progress-h);
+      background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+      z-index: 1000;
+      transition: width 0.1s linear;
+      transform-origin: left;
+    }
+
+    /* ============================================================
+       TOP NAV / CONTROLS
+    ============================================================ */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      background-color: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      transition: background-color 0.35s var(--ease-smooth), border-color 0.35s var(--ease-smooth);
+    }
+
+    .site-nav-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .btn-icon:hover {
+      background: var(--bg-alt);
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    .btn-icon svg { width: 1rem; height: 1rem; }
+
+    /* ============================================================
+       LAYOUT WRAPPER
+    ============================================================ */
+    .page-wrapper {
+      max-width: var(--max-wide);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ============================================================
+       ARTICLE HEADER
+    ============================================================ */
+    .article-header {
+      max-width: var(--max-prose);
+      margin: 0 auto;
+      padding: 4rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .article-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .byline {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .reading-time {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    /* ============================================================
+       HERO IMAGE
+    ============================================================ */
+    .hero-figure {
+      max-width: var(--max-wide);
+      margin: 2.5rem auto 0;
+    }
+
+    .hero-figure-inner {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 1rem;
+      background: var(--bg-alt);
+    }
+
+    .hero-figure-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.9) contrast(0.97);
+      transition: transform 0.6s var(--ease-smooth);
+    }
+    .hero-figure-inner:hover img { transform: scale(1.02); }
+
+    .hero-caption {
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+
+    /* ============================================================
+       PROSE BODY
+    ============================================================ */
+    .prose {
+      max-width: var(--max-prose);
+      margin: 0 auto;
+    }
+
+    .prose-section {
+      padding: 3rem 0 0;
+    }
+
+    .prose p {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.82;
+      color: var(--text);
+      margin-bottom: 1.4rem;
+    }
+
+    /* ============================================================
+       SECTION HEADINGS
+    ============================================================ */
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 700;
+      color: var(--text);
+      padding-top: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-top: 1px solid var(--rule);
+      margin-bottom: 0;
+      line-height: 1.3;
+    }
+
+    /* ============================================================
+       PULL QUOTES
+    ============================================================ */
+    .pull-quote {
+      position: relative;
+      margin: 2.5rem 0;
+      padding: 2rem 2.5rem;
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 0.5rem 0.5rem 0;
+      transition: background 0.35s var(--ease-smooth);
+    }
+
+    .pull-quote p {
+      font-family: var(--font-serif) !important;
+      font-size: 1.25rem !important;
+      font-style: italic;
+      line-height: 1.6 !important;
+      color: var(--text) !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .pull-quote .translation {
+      font-family: var(--font-sans) !important;
+      font-size: 0.82rem !important;
+      font-style: normal;
+      color: var(--text-light) !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Centered pull quote variant */
+    .pull-quote-center {
+      text-align: center;
+      margin: 3rem auto;
+      max-width: 600px;
+      padding: 0;
+      border-left: none;
+      background: transparent;
+      border-radius: 0;
+    }
+
+    .pull-quote-center p {
+      font-family: var(--font-serif) !important;
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem) !important;
+      font-style: italic;
+      line-height: 1.55 !important;
+      color: var(--text) !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .pull-quote-center .translation {
+      font-family: var(--font-sans) !important;
+      font-size: 0.82rem !important;
+      font-style: normal;
+      color: var(--text-light) !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* ============================================================
+       CALLOUT / STAT BOX
+    ============================================================ */
+    .callout {
+      background: var(--bg-alt);
+      border-radius: 0.75rem;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      border: 1px solid var(--rule);
+      transition: background 0.35s var(--ease-smooth);
+    }
+
+    .callout p {
+      font-family: var(--font-sans) !important;
+      font-size: 0.9rem !important;
+      line-height: 1.6 !important;
+      color: var(--text-muted) !important;
+      margin-bottom: 0 !important;
+    }
+
+    .callout strong {
+      color: var(--text);
+    }
+
+    /* ============================================================
+       IMAGE FIGURES
+    ============================================================ */
+    .figure-single {
+      max-width: 520px;
+      margin: 3.5rem auto;
+    }
+
+    .figure-single-inner {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 1rem;
+      background: var(--bg-alt);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    .figure-single-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s var(--ease-smooth);
+    }
+    .figure-single-inner:hover img { transform: scale(1.02); }
+
+    .figure-wide {
+      max-width: var(--max-wide);
+      margin: 3.5rem auto;
+    }
+
+    .figure-wide-inner {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 1rem;
+      background: var(--bg-alt);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    .figure-wide-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(0.97);
+      transition: transform 0.5s var(--ease-smooth);
+    }
+    .figure-wide-inner:hover img { transform: scale(1.02); }
+
+    .figure-grid {
+      max-width: var(--max-wide);
+      margin: 3.5rem auto;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (min-width: 700px) {
+      .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .grid-item {
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background: var(--bg-alt);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(0.97);
+      transition: transform 0.5s var(--ease-smooth);
+      display: block;
+    }
+    .grid-item:hover img { transform: scale(1.04); }
+
+    .grid-item-abroad {
+      aspect-ratio: 4/3;
+    }
+
+    .grid-item-home {
+      aspect-ratio: 1/1;
+    }
+
+    figcaption, .fig-caption {
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 0.75rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       BLOCKQUOTE (literary)
+    ============================================================ */
+    .literary-quote {
+      text-align: center;
+      margin: 3rem auto;
+      max-width: 560px;
+    }
+
+    .literary-quote p:first-child {
+      font-family: var(--font-serif) !important;
+      font-size: clamp(1.15rem, 2.5vw, 1.5rem) !important;
+      font-style: italic;
+      line-height: 1.55 !important;
+      color: var(--text) !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .literary-quote p.sub {
+      font-family: var(--font-sans) !important;
+      font-size: 0.82rem !important;
+      color: var(--text-light) !important;
+      font-style: normal;
+      margin-bottom: 0 !important;
+    }
+
+    /* ============================================================
+       DIVIDER
+    ============================================================ */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    .ornament {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 1.1rem;
+      letter-spacing: 0.5rem;
+      margin: 2.5rem 0;
+      user-select: none;
+    }
+
+    /* ============================================================
+       FOOTER / REFERENCES
+    ============================================================ */
+    .article-footer {
+      max-width: var(--max-prose);
+      margin: 3rem auto 0;
+      padding: 2.5rem 0 4rem;
+      border-top: 2px solid var(--rule);
+    }
+
+    .references-label {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .reference-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .reference-item p {
+      font-family: var(--font-sans) !important;
+      font-size: 0.82rem !important;
+      line-height: 1.55 !important;
+      margin-bottom: 0.2rem !important;
+    }
+
+    .reference-item .ref-title {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .reference-item a {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      word-break: break-all;
+    }
+    .reference-item a:hover { color: var(--accent); }
+
+    /* ============================================================
+       BACK TO TOP
+    ============================================================ */
+    #back-to-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(1rem);
+      transition: opacity 0.3s, transform 0.3s, background 0.2s;
+      z-index: 800;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+    #back-to-top.visible { opacity: 1; transform: translateY(0); }
+    #back-to-top:hover { background: var(--bg-alt); color: var(--accent); }
+    #back-to-top svg { width: 1rem; height: 1rem; }
+
+    /* ============================================================
+       INTRO PARAGRAPH (drop cap)
+    ============================================================ */
+    .intro-para::first-letter {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 0.8;
+      float: left;
+      margin-right: 0.1em;
+      margin-top: 0.08em;
+      color: var(--accent);
+    }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .mt-lg { margin-top: 2.5rem; }
+    .mb-lg { margin-bottom: 2.5rem; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 640px) {
+      .article-header { padding: 2.5rem 0 1.5rem; }
+      .pull-quote { padding: 1.25rem 1.5rem; }
+      .callout { padding: 1rem 1.25rem; }
+      html { font-size: 16px; }
+    }
+
+    /* ============================================================
+       PRINT
+    ============================================================ */
+    @media print {
+      #progress-bar, .site-nav, #back-to-top { display: none; }
+      body { background: white; color: black; font-size: 11pt; }
+      .pull-quote, .callout { background: #f5f5f5; border-color: #999; }
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Reading Progress Bar -->
+  <div id="progress-bar" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Article navigation">
+    <span class="site-nav-label">Gender &amp; Society</span>
+    <div class="nav-controls">
+      <button class="btn-icon" id="dark-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" style="display:none">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m8.66-10h-2M5.34 12h-2m14.95 5.66-1.41-1.41M6.05 6.05 4.64 4.64m12.73 0-1.41 1.41M6.05 17.95l-1.41 1.41M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7z"/>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Article -->
+  <main id="main-content">
+    <div class="page-wrapper">
+
+      <!-- Article Header -->
+      <header class="article-header">
+        <span class="kicker">Feature Story</span>
+        <h1 class="article-title">From Provider Abroad to Caregiver at Home</h1>
+        <p class="article-subtitle">Beth&#8217;s Story Beyond Gender Norms</p>
+        <div class="article-meta">
+          <p class="byline">By James Ongo &nbsp;&bull;&nbsp; MO-SS086 Gender and Society</p>
+          <p class="reading-time">Approx. 10 min read</p>
+        </div>
+      </header>
+
+      <!-- Hero Image -->
+      <figure class="hero-figure">
+        <div class="hero-figure-inner" style="aspect-ratio: 4/3; max-height: 520px;">
+          <img
+            src="assets/e920f0260f565c1cadf37e28e0e7a59abf425ec7-buxtc1dg.png"
+            alt="Beth seated and reflective, photographed at an airport"
+            loading="eager"
+          />
+        </div>
+        <figcaption class="hero-caption">A mother carrying two roles at once, provider and caregiver.</figcaption>
+      </figure>
+
+      <!-- SECTION: Opening -->
+      <div class="prose">
+        <div class="prose-section">
+
+          <div class="pull-quote">
+            <p>&#8220;Madaling manganak, mahirap magpaka-nanay.&#8221;</p>
+            <p class="translation">(It is easy to give birth; it is hard to be a mother.)</p>
+          </div>
+
+          <p class="intro-para">Beth does not say this to sound strong. She says it because motherhood, for her, is work that has to be done. When problems arrive, she absorbs them first. She looks for solutions first. And she tries to prevent the full impact from reaching her children.</p>
+
+          <p>Her life moves in a loop she repeats without drama: trabaho, bahay, trabaho, bahay. Work, home, work, home. It is not performance. It is structure. It is survival.</p>
+
+          <p>Beth&#8217;s story is shaped by a decision many mothers are never meant to face: choosing between presence and provision. When support failed and obligations remained, she stepped into the provider role herself and left the Philippines to work overseas.</p>
+
+          <p>But leaving did not remove motherhood. It only changed how it was carried. Abroad, she could provide more. At home, she could be present. In both places, the burden remained.</p>
+
+        </div>
+      </div>
+
+      <!-- IMAGE: Young Beth working -->
+      <figure class="figure-single">
+        <div class="figure-single-inner">
+          <img
+            src="assets/c76464601b5aabbdc6ca93023c07093d441ea707-bwibprmk.png"
+            alt="Young Beth operating machinery at a factory"
+            loading="lazy"
+          />
+        </div>
+        <figcaption>Repetition became stability.</figcaption>
+      </figure>
+
+      <!-- SECTION: Life Abroad -->
+      <div class="prose">
+        <div class="prose-section">
+          <h2 class="section-heading">Life Abroad</h2>
+
+          <p>In Taiwan, the first days felt isolating. She recalls three days with no way to contact anyone. She cried. Then she tried again.</p>
+
+          <div class="pull-quote">
+            <p>&#8220;Lord, kaya ko &#8217;to.&#8221;</p>
+            <p class="translation">(Lord, I can do this.)</p>
+          </div>
+
+          <p>In her first years abroad, she had no day off. Later, she had one rest day a month. Under another contract, she had weekly rest days but still chose extra cleaning to earn more.</p>
+
+          <p>She describes factory work layered over caregiving. Drop a child at school. Go to the factory. Fetch the child. Continue household work. She calls it simply double work.</p>
+
+          <p>Even communication had a cost. She relied on payphones and coins. She kept a basic phone, a 3310, for years because upgrading felt unnecessary when every peso could go to the family.</p>
+
+        </div>
+      </div>
+
+      <!-- IMAGE GRID: Abroad (Taiwan memories + factory) -->
+      <figure class="figure-grid">
+        <div class="grid-2">
+          <div class="grid-item grid-item-abroad">
+            <img
+              src="assets/60dd73ef5a6cac71023ff8b4ba32b8e131c8d881-dymaxfxd.png"
+              alt="Taiwan caregiving memories"
+              loading="lazy"
+            />
+          </div>
+          <div class="grid-item grid-item-abroad">
+            <img
+              src="assets/c76464601b5aabbdc6ca93023c07093d441ea707-bwibprmk.png"
+              alt="Factory work during early years abroad"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <figcaption>Providing overseas meant trading presence for stability.</figcaption>
+      </figure>
+
+      <!-- SECTION: The Price of Distance -->
+      <div class="prose">
+        <div class="prose-section">
+          <h2 class="section-heading">The Price of Distance</h2>
+
+          <p>People call overseas workers heroes. Beth understands why. But the word hides something.</p>
+
+          <p>When money is the reason you leave, you still pay in another currency: time, presence, milestones you only hear about after they have passed.</p>
+
+        </div>
+      </div>
+
+      <!-- SECTION: Home - Less Income, More Presence -->
+      <div class="prose">
+        <div class="prose-section">
+          <h2 class="section-heading">Home &#8212; Less Income, More Presence</h2>
+
+          <p>Back in the Philippines, Beth names the advantage first: family is near. Support is no longer distant. When life is heavy, someone is physically present.</p>
+
+          <p>But the trade-off is real. Local income is smaller. She takes double jobs to compensate. Abroad, the burden was emotional distance. At home, financial strain can arrive quickly and demand immediate decisions.</p>
+
+          <p>She speaks about aruga &#8212; care that is felt, not just provided. She did not want her daughter to grow up with a gap that money could not fill.</p>
+
+        </div>
+      </div>
+
+      <!-- IMAGE GRID: At Home (family photos) -->
+      <figure class="figure-grid">
+        <div class="grid-4">
+          <div class="grid-item grid-item-home">
+            <img
+              src="assets/59fc37b3b3decba2730e10991abe77b250d7e214-c8ih-bli.png"
+              alt="Family living room moment"
+              loading="lazy"
+            />
+          </div>
+          <div class="grid-item grid-item-home">
+            <img
+              src="assets/f54fd05c5c44ddffacecb743fd7185d7d5093066-hgk0w9xp.png"
+              alt="Pool time with siblings"
+              loading="lazy"
+            />
+          </div>
+          <div class="grid-item grid-item-home">
+            <img
+              src="assets/5aacf3d4939c02f38c3f588aad341c35b38b088d-cihkhemg.png"
+              alt="School days motorcycle selfie"
+              loading="lazy"
+            />
+          </div>
+          <div class="grid-item grid-item-home">
+            <img
+              src="assets/fe5460e624c3cfcb2ab5d260d317805be2b27aeb-cbhzk3wc.png"
+              alt="Christmas family photo"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <figcaption>Home brought presence back, but financial strain became the new pressure.</figcaption>
+      </figure>
+
+      <!-- SECTION: The Math of Staying -->
+      <div class="prose">
+        <div class="prose-section">
+          <h2 class="section-heading">The Math of Staying</h2>
+
+          <p>Beth knows what she traded: higher pay for daily presence. But presence does not pay the electricity bill.</p>
+
+          <p>Under Republic Act No. 11861, qualified solo parents may receive a &#8369;1,000 monthly cash subsidy.</p>
+
+          <div class="callout">
+            <p><strong>In 2023,</strong> the Philippine Statistics Authority reported a poverty threshold of <strong>&#8369;13,873 per month</strong> for a family of five.</p>
+          </div>
+
+          <p>Placed side by side, the gap becomes visible. The subsidy is help, but not a solution. It cannot carry an entire month.</p>
+
+          <p>Emergencies do not wait for paperwork or release schedules.</p>
+
+        </div>
+
+        <!-- SECTION: When Needs Are Urgent -->
+        <div class="prose-section">
+          <h2 class="section-heading">When Needs Are Urgent</h2>
+
+          <p>After the recorded interview, Beth shared that there were moments she turned to online lending when urgent needs arrived faster than income and assistance could.</p>
+
+          <p>She describes it as a bridge, not a preference &#8212; a way to close a gap that opens suddenly and demands an immediate answer.</p>
+
+          <p>If support exists on paper, does it arrive in time?</p>
+
+        </div>
+
+        <!-- SECTION: How Single Motherhood Is Seen -->
+        <div class="prose-section">
+          <h2 class="section-heading">How Single Motherhood Is Seen</h2>
+
+          <p>Beth is aware of how people talk about single mothers. She rejects the shortcuts and assumptions.</p>
+
+          <p>Instead of arguing, she returns to structure:</p>
+
+          <div class="pull-quote-center">
+            <p>&#8220;Trabaho, bahay, trabaho, bahay.&#8221;</p>
+          </div>
+
+          <p>Consistency becomes her answer.</p>
+
+        </div>
+
+        <!-- SECTION: What Holds Her Up Now -->
+        <div class="prose-section">
+          <h2 class="section-heading">What Holds Her Up Now</h2>
+
+          <p>Beth does not describe her life as pure independence. She describes survival with people nearby.</p>
+
+          <p>Being home means shared childcare. Familiar faces. Someone checking in. Not carrying everything alone.</p>
+
+          <p>Before, she endured distance to provide. Now, she accepts less income to stay. Family becomes the reason. Family becomes part of the support.</p>
+
+        </div>
+      </div>
+
+      <!-- IMAGE: Extended family -->
+      <figure class="figure-wide">
+        <div class="figure-wide-inner" style="aspect-ratio: 16/9; max-height: 400px;">
+          <img
+            src="assets/55bc16b546aebc8a06f991e8f5e3f1c70c1eae50-y_gb-fvm.png"
+            alt="Extended family gathering at the pool"
+            loading="lazy"
+          />
+        </div>
+        <figcaption>What holds her up now is not only resilience, but family close enough to share the weight.</figcaption>
+      </figure>
+
+      <!-- SECTION: Still Carrying the Weight -->
+      <div class="prose">
+        <div class="prose-section">
+          <h2 class="section-heading">Still Carrying the Weight</h2>
+
+          <p>Beth keeps her rule simple:</p>
+
+          <div class="pull-quote-center">
+            <p>&#8220;As long as kaya kong gawin ngayon, gawin ko ngayon.&#8221;</p>
+          </div>
+
+          <p>It is not a motivational quote. It is survival logic in a life where mothers are expected to carry both paid labor and unpaid care at once.</p>
+
+        </div>
+
+        <!-- SECTION: A Borrowed Life -->
+        <div class="prose-section">
+          <h2 class="section-heading">A Borrowed Life</h2>
+
+          <div class="literary-quote">
+            <p>&#8220;Yung buhay natin ay hiram lang talaga.&#8221;</p>
+            <p class="sub">(Our life is only borrowed.)</p>
+          </div>
+
+          <p>She trains her children to stand on their own, not because she wants distance, but because she wants them ready for a future she cannot control.</p>
+
+        </div>
+
+        <!-- SECTION: Final Reflection -->
+        <div class="prose-section">
+          <h2 class="section-heading">Final Reflection</h2>
+
+          <p>Beth&#8217;s story is easy to read as resilience. That reading is comforting.</p>
+
+          <p>But if mothers are expected to carry both income and caregiving &#8212; and praised for enduring the strain &#8212; what does society assume about who will catch them when they finally cannot?</p>
+
+        </div>
+
+        <!-- REFERENCES -->
+        <footer class="article-footer">
+          <p class="references-label">References</p>
+
+          <div class="reference-item">
+            <p class="ref-title">Republic Act No. 11861 (Expanded Solo Parents Welfare Act). Philippine Commission on Women.</p>
+            <a href="https://pcw.gov.ph/republic-act-no-11861-expanded-solo-parents-welfare-act/" target="_blank" rel="noopener noreferrer">https://pcw.gov.ph/republic-act-no-11861-expanded-solo-parents-welfare-act/</a>
+          </div>
+
+          <div class="reference-item">
+            <p class="ref-title">Philippine Statistics Authority poverty threshold benchmark (2023).</p>
+            <a href="https://business.inquirer.net/475138/psa-p13873-month-budget-for-basic-needs-enough-for-family" target="_blank" rel="noopener noreferrer">https://business.inquirer.net/475138/psa-p13873-month-budget-for-basic-needs-enough-for-family</a>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+
+  <script>
+    // ============================================================
+    // READING PROGRESS BAR
+    // ============================================================
+    const progressBar = document.getElementById('progress-bar');
+
+    function updateProgress() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const pct = docHeight > 0 ? Math.min(100, Math.round((scrollTop / docHeight) * 100)) : 0;
+      progressBar.style.width = pct + '%';
+      progressBar.setAttribute('aria-valuenow', pct);
+    }
+
+    // ============================================================
+    // DARK MODE TOGGLE
+    // ============================================================
+    const darkToggle = document.getElementById('dark-toggle');
+    const iconSun    = document.getElementById('icon-sun');
+    const iconMoon   = document.getElementById('icon-moon');
+    const htmlEl     = document.documentElement;
+
+    function applyTheme(dark) {
+      if (dark) {
+        htmlEl.setAttribute('data-theme', 'dark');
+        iconSun.style.display  = '';
+        iconMoon.style.display = 'none';
+        darkToggle.setAttribute('aria-label', 'Switch to light mode');
+      } else {
+        htmlEl.removeAttribute('data-theme');
+        iconSun.style.display  = 'none';
+        iconMoon.style.display = '';
+        darkToggle.setAttribute('aria-label', 'Switch to dark mode');
+      }
+    }
+
+    // Read saved preference, then system preference as fallback
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved === 'dark' || (!saved && prefersDark));
+
+    darkToggle.addEventListener('click', () => {
+      const isDark = htmlEl.hasAttribute('data-theme');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      applyTheme(!isDark);
+    });
+
+    // ============================================================
+    // BACK TO TOP
+    // ============================================================
+    const backToTop = document.getElementById('back-to-top');
+
+    function checkScroll() {
+      updateProgress();
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>
