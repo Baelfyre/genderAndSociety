@@ -6,6 +6,14 @@
   <title>From Provider Abroad to Caregiver at Home: Beth's Story Beyond Gender Norms</title>
   <meta name="description" content="A long-form editorial feature on Beth, a Filipino mother who navigated the roles of overseas worker and primary caregiver, challenging gender norms through lived experience." />
   <meta name="author" content="James Ongo" />
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="From Provider Abroad to Caregiver at Home: Beth's Story Beyond Gender Norms" />
+  <meta property="og:description" content="A long-form editorial feature on Beth, a Filipino mother who navigated the roles of overseas worker and primary caregiver." />
+  <meta property="og:image" content="https://baelfyre.github.io/genderAndSociety/assets/e920f0260f565c1cadf37e28e0e7a59abf425ec7-buxtc1dg.png" />
+  <meta property="og:url" content="https://baelfyre.github.io/genderAndSociety/index-enhanced.html" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -509,8 +517,54 @@
     }
 
     /* ============================================================
-       FOOTER / REFERENCES
+       SHARE SECTION & FOOTER
     ============================================================ */
+    .share-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .share-label {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .share-links {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      color: var(--text-light);
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    
+    .share-btn:hover {
+      background: var(--accent);
+      color: var(--surface);
+    }
+    
+    .share-btn svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
     .article-footer {
       max-width: var(--max-prose);
       margin: 3rem auto 0;
@@ -918,6 +972,22 @@
 
           <p>But if mothers are expected to carry both income and caregiving &#8212; and praised for enduring the strain &#8212; what does society assume about who will catch them when they finally cannot?</p>
 
+        </div>
+
+        <!-- SHARE SECTION -->
+        <div class="share-section">
+          <span class="share-label">Share this story</span>
+          <div class="share-links">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://baelfyre.github.io/genderAndSociety/index-enhanced.html" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=https://baelfyre.github.io/genderAndSociety/index-enhanced.html&text=From+Provider+Abroad+to+Caregiver+at+Home:+Beth%27s+Story" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on X">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://baelfyre.github.io/genderAndSociety/index-enhanced.html" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on LinkedIn">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
         </div>
 
         <!-- REFERENCES -->
